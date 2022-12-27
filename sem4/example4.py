@@ -13,5 +13,5 @@ while count < 4:
     list.append(f'{random.randint(0, 101)}')
     count += 1
 
-with open('work2.txt', 'w') as data:
+with open('work1.txt', 'w') as data:
     data.write(f'{list[0]}x^{k} + {list[1]}x + {list[2]} = 0')
