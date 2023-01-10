@@ -1,5 +1,5 @@
 # Палиндром
-string = '12211'
+string = '11211'
 
 count = len(string)
 a = False
