@@ -14,7 +14,7 @@ while i < len(string):
     while i + 1 < len(string) and string[i] == string[i + 1]:
         count += 1
         i += 1
-    result += str(count) + string[i]
+    result += str(count) + string[i] + ' '
     i += 1
-    
+
 print(result)  
