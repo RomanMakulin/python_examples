@@ -1,7 +1,7 @@
 # Изучили функции map filter zip and another lambda
 
 import random
-# Создание массива
+# Создание массива рандомного массива 
 array = [i for i in range(1, 100)]
 random.shuffle(array)
 array = array[:10]
@@ -20,4 +20,13 @@ ids = ['a', 'b', 'c']
 array = list(zip(ids, array))
 
 print(array)
+
+array = [i for i in range(1, 100)]
+random.shuffle(array)
+array = array[:2]
+print(array)
+print((lambda a, b: a if a > b else b)(array[0], array[1]))
+
+
+
 
