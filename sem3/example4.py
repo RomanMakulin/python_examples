@@ -8,6 +8,6 @@ a = 45
 list = []
 
 while a > 0:
-    list.append(a % 2)
+    list.insert(0, a % 2)
     a = a // 2
 print(list)
