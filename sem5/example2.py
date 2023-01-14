@@ -41,4 +41,3 @@ while size > 0:
 
 print('Игра закончена')
 print(f'Общий счет: Roman ({b_count}), Maxim({a_count})')
-    
