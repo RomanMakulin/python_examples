@@ -38,6 +38,5 @@ while size > 0:
     print(f'Конфет осталось: {size}')
     print()
 
-
 print('Игра закончена')
 print(f'Общий счет: Roman ({b_count}), Maxim({a_count})')
