@@ -7,7 +7,6 @@ with open('file_encode.txt', 'r') as data:
     string = data.readline()
 data.close
 
-
 result = ''
 i = 0
 while i < len(string):
@@ -17,5 +16,5 @@ while i < len(string):
         i += 1
     result += str(count) + string[i]
     i += 1
-
+    
 print(result)  
