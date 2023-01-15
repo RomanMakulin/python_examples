@@ -9,26 +9,30 @@
 # При реализации программы используйте функцию filter 
 # # и кое-что еще (для упрощения программы), подумайте что.
 
-list1 = '2 2 3 4 12 2 3 4 12 2 3 4 12 2 3 4 12 2 3'
-array1 = []
-list2 = '8 2 5 7 2 1 18 2 5 7 2 1 18 2'
-array2 = []
-new_arr = []
+# list1 = '2 2 3 4 12 2 3 4 12 2 3 4 12 2 3 4 12 2 3'
+# array1 = []
+# list2 = '8 2 5 7 2 1 18 2 5 7 2 1 18 2'
+# array2 = []
+# new_arr = []
 
 import time
 start = time.time()
 
-# 0.1900196075439453 ms
-def moneta(list2, array2):
-    for i in list2:
-        if i != ' ':
-            i = int(i)
-            array2.append(i)
-    array2 = list(filter(lambda i: not i%2, array2))
-    return array2
+Sasha = list(map(int, input('Сашины моенты: ').split()))
+Galya = list(map(int, input('Сашины моенты: ').split()))
+print(*sorted(filter((lambda i: not i%2), (i for i in Sasha if Galya.count(i)))))
 
-result_list = moneta(list2, array2) + moneta(list1, array1)
-print(', '.join([str(i) for i in result_list]))
+# # 0.1900196075439453 ms
+# def moneta(list2, array2):
+#     for i in list2:
+#         if i != ' ':
+#             i = int(i)
+#             array2.append(i)
+#     array2 = list(filter(lambda i: not i%2, array2))
+#     return array2
+
+# result_list = moneta(list2, array2) + moneta(list1, array1)
+# print(', '.join([str(i) for i in result_list]))
 
 end = time.time()
 print("The time of execution of above program is :",
