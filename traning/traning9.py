@@ -13,8 +13,8 @@
 # (символ, порядковый индекс)
 # Первый индекс имеет значение 0. Строка может быть короче 10 символов, а может быть и длиннее. То есть, число пар может быть 10 и менее. Используя функцию zip сформируйте указанные кортежи и сохраните в список с именем lst.
 # 
-string = 'Hello Worlddddddddddddddddddddddddddddddddddddd'
-print(*zip(string, range(11)))
+# string = 'Hello Worlddddddddddddddddddddddddddddddddddddd'
+# print(*zip(string, range(11)))
 
 # 5. Напишите программу, которая подсчитает и выведет сумму квадратов всех двузначных чисел, делящихся на 9.
 # При решении задачи используйте комбинацию функций filter, map, sum.
@@ -22,3 +22,8 @@ print(*zip(string, range(11)))
 # Обратите внимание: на 9 должно делиться исходное двузначное число, а не его квадрат.
 
 
+nums = ['12313asd3','asd321313', '1231321asd']
+names = [input('ds') for i in nums]
+new_nums = zip(names, nums)
+
+print(list(new_nums))
