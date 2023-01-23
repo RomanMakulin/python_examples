@@ -27,7 +27,6 @@
 # string = list(map(int, '1 2 1 4 5 1 4'.split())) # 1 2 4 5
 # nums = []; [nums.append(i) for i in string if i not in nums]
 # print(nums)
-# print('-'*30)
 
 #  -----------------------------------------
 
@@ -48,7 +47,6 @@
 # 5) enumerate. сложение под четными индексами
 # list = [2, 4, 1, 8, 9, 10]
 # new_list = [nums for i, nums in enumerate(list) if i%2 == 0]
-# print(new_list)
 
 # from functools import reduce
 # sum_all = reduce(lambda x,y: x + y, new_list)
