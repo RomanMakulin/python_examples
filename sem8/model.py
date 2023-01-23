@@ -4,12 +4,8 @@ def find_person(key): # Нахождение человека из файла п
         data = file.read().split('\n')
         for i in data:
             if i.count(key):
-                first_name, second_name, position, salary = i.split(';')
-                table = 'Name Pos Salary'.split()
-                values = [f'{first_name} {second_name}', position, salary]
-                result = zip(table, values)
-                
-                return print(*result)
+                first_name, second_name, position, salary, doljnost = i.split(';')
+                return print(f'{first_name} {second_name}, {position}, {salary}, {doljnost}')
             else:
                 return print('Not found')
 
@@ -19,13 +15,12 @@ def update_person(key):
         for i in data:
             if i.count(key):
                 first_name, second_name, position, salary, doljnost = i.split(';')
-                table = 'Name Pos Salary Doljnost'.split()
-                values = [f'{first_name} {second_name}', position, salary, doljnost]
-                table.append(input('Введите категорию: '))
-                values.append(input('Введите значение: '))
-                result = zip(table, values)
-                
-                return print(*result)
+                array = [first_name, second_name, position, salary, doljnost]
+                n = int(input('Введите номер параметра, который хотите обновить: '))
+                array[n] = str(input('Введите обновленные данные: '))
+                with open('sem8/phonebook.csv', 'w') as file:
+                    data = file.write(str(array))
+                return print(array) 
             else:
                 return print('Not found')
 update_person('Makulin')
