@@ -10,19 +10,29 @@ def find_person(key): # Нахождение человека из файла п
                 return print('Not found')
 
 def update_person(key):
+
     with open('sem8/phonebook.csv', 'r') as file:
         data = file.read().split('\n')
+        with open('sem8/phonebook.csv', 'w') as file:
+            for i in data:
+                if i.count(key):
+                    first_name, second_name, position, salary, doljnost = i.split(';')
+                    array = [first_name, second_name, position, salary, doljnost]
+                    n = int(input('Введите номер параметра, который хотите обновить: '))
+                    array[n] = str(input('Введите обновленные данные: '))
+                else:
+                    first_name, second_name, position, salary, doljnost = i.split(';')
+                    with open('sem8/phonebook.csv', 'a') as file:
+                        file.write(f'\n{first_name} {second_name}, {position}, {salary}, {doljnost}')
+            with open('sem8/phonebook.csv', 'a') as file:
+                a = ', '
+                file.write(f'\n{a.join(array)}')
+
+    with open('sem8/phonebook.csv', 'r') as data:
         for i in data:
-            if i.count(key):
-                first_name, second_name, position, salary, doljnost = i.split(';')
-                array = [first_name, second_name, position, salary, doljnost]
-                n = int(input('Введите номер параметра, который хотите обновить: '))
-                array[n] = str(input('Введите обновленные данные: '))
-                with open('sem8/phonebook.csv', 'w') as file:
-                    data = file.write(str(array))
-                return print(array) 
-            else:
-                return print('Not found')
+            if i.strip():
+                data.write(i)
+
 update_person('Makulin')
 
 def filter_doljnost():

@@ -1,6 +1,6 @@
 from random import randint
 
-right = 100000
+right = 100000 
 left = 0
 x = randint(left, right)
 
