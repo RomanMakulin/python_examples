@@ -14,7 +14,13 @@ def show_menu() -> int:
     return int(input("Введите номер необходимого действия: "))
 
 def find():
-    return input('Кого ищем?')
+    return input('Введите ключевое слово для поиска сотрудника: ')
+
+def doljnost():
+    return input('Введите должность для получения списка сотрудников: ')
+
+def salary():
+    return input('Введите ЗП для получения списка сотрудников: ')
 
 def add_new_personal():
     name = input('Name: ')
@@ -25,6 +31,6 @@ def add_new_personal():
     return name, surname, position, salary, doljnost
 
 def info(message):
-    print(message)
+    print('Done')
 
 

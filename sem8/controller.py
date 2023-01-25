@@ -9,12 +9,10 @@ def find():
     return v.info(m.find_person(v.find()))
 
 def position():
-
-    return 0
+    return m.filter_doljnost(v.doljnost())
 
 def salary():
-
-    return 0
+    return m.filter_salary(v.salary())
 
 def new_person():
     res = m.add_member(v.add_new_personal())
