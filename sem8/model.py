@@ -14,10 +14,8 @@ def find_person(key): # Нахождение человека из файла п
         for i in data:
             if i.count(key):
                 first_name, second_name, position, salary, doljnost = i.split(';')
-                print(f'{first_name} {second_name}, {position}, {salary}, {doljnost}')
+                print(f'First name: {first_name}, Second name: {second_name}, ID: {position}, Salary: {salary}, Doljnost: {doljnost}')
         file.close
-
-
 
 def update_person(key): # Обновление данных 
     empty_string() # Удаляем пустые строки для чтения
@@ -51,7 +49,6 @@ def filter_doljnost(key): # Выборка по должности
                 print(f'{first_name} {second_name}, {position}, {salary}, {doljnost}')
         file.close
 
-
 def filter_salary(key): # Выборка по зарплате
     empty_string()
     with open('sem8/phonebook.csv', 'r') as file:
@@ -84,7 +81,6 @@ def del_member(key):
                         file.close
             file.close
         file.close
-
     empty_string() # Удаляем пустые строки после обновления параметров
 
 def export(key):
@@ -97,9 +93,3 @@ def export(key):
     
 def exit(key):
     return SystemExit()
-
-
-        
-            
-
-

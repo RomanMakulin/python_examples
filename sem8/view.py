@@ -1,5 +1,5 @@
 
-def show_menu() -> int:
+def show_menu():
     print("\n" + "=" * 20)
     print("Выберите необходимое действие: ")
     print("1. Найти сотрудника: ")
@@ -44,5 +44,3 @@ def exporting():
 
 def prog_out():
     return print('Finishing programm')
-
-

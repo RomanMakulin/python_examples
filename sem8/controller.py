@@ -24,7 +24,6 @@ def del_person():
 def update():
     return m.update_person(v.upd())
 
-
 def export_json():
     return m.export(v.exporting())
 
@@ -33,4 +32,3 @@ def export_csv():
 
 def exit_of_program():
     return m.exit(v.prog_out())
-
