@@ -6,7 +6,7 @@ def start():
     return options[v.show_menu() - 1]()
 
 def find():
-    return v.info(m.find_person(v.find()))
+    return m.find_person(v.find())
 
 def position():
     return m.filter_doljnost(v.doljnost())
@@ -19,22 +19,16 @@ def new_person():
     return v.info(res)
 
 def del_person():
-
-    return 0
+    return m.del_member(v.delete())
 
 def update():
-
-    return 0
+    return m.update_person(v.upd())
 
 def export_json():
-    # передавать словарь
-    return 0
+    return m.export(v.exporting())
 
 def export_csv():
-
-    return 0
+    return m.export(v.exporting())
 
 def exit_of_program():
-
-    return 0
-
+    return m.exit(v.prog_out())
