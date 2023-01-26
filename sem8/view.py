@@ -16,6 +16,12 @@ def show_menu() -> int:
 def find():
     return input('Введите ключевое слово для поиска сотрудника: ')
 
+def upd():
+    return input('Введите ID пользователя для обновления параметра: ')
+
+def delete():
+    return input('Введите ID пользователя для удаления: ')
+
 def doljnost():
     return input('Введите должность для получения списка сотрудников: ')
 
@@ -32,5 +38,11 @@ def add_new_personal():
 
 def info(message):
     print('Done')
+
+def exporting():
+    return input('Введите название файла с нужным форматом: ')
+
+def prog_out():
+    return print('Finishing programm')
 
 
