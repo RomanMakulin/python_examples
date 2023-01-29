@@ -9,10 +9,18 @@
 # Дан список, вывести отдельно буквы и цифры
 # a = ('a', 'b', '2')
 
-a = ('a', 'b', '22', 'c')
-b = filter(str.isalpha, a)
-c = filter(str.isdigit, a)
+# a = ('a', 'b', '22', 'c')
+# b = filter(str.isalpha, a)
+# c = filter(str.isdigit, a)
 
-print(*b)
-print(*c)
+# print(*b)
+# print(*c)
+
+items = '/calc 1 2 4 1'.split()
+
+for i in items:
+    if i.isdigit():
+        result = result + int(i)
+print(result)
+
 
