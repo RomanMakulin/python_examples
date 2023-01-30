@@ -46,7 +46,7 @@ async def func(message: types.Message):
 
 @dp.message_handler(commands=['Мультики'])
 async def func(message: types.Message):
-        await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {mults[randint(0, len(mults))]}')
+        await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {mults[randint(0, len(mults)-1)]}')
 
 @dp.message_handler(commands=['Меню'])
 async def menu_handler(message: types.Message):
@@ -69,27 +69,27 @@ dogs = ['Собака 1', 'Собака 2', 'Собака 3']
 
 @dp.message_handler(commands=['Фантастика'])
 async def fantasy_handler(message: types.Message):
-    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {fantasy[randint(0, len(fantasy))]}')
+    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {fantasy[randint(0, len(fantasy)-1)]}')
 
 @dp.message_handler(commands=['Ужасы'])
 async def horror_handler(message: types.Message):
-    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {horror[randint(0, len(horror))]}')
+    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {horror[randint(0, len(horror)-1)]}')
 
 @dp.message_handler(commands=['Комедия'])
 async def comedy_handler(message: types.Message):
-    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {camedy[randint(0, len(camedy))]}')
+    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {camedy[randint(0, len(camedy)-1)]}')
 
 @dp.message_handler(commands=['Романтика'])
 async def roman_handler(message: types.Message):
-    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {roman[randint(0, len(roman))]}')
+    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {roman[randint(0, len(roman)-1)]}')
     
 @dp.message_handler(commands=['Военные'])
 async def historic_handler(message: types.Message):
-    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {historic[randint(0, len(historic))]}')
+    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {historic[randint(0, len(historic)-1)]}')
 
 @dp.message_handler(commands=['Про_собак'])
 async def dogs_handler(message: types.Message):
-    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {dogs[randint(0, len(dogs))]}')
+    await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {dogs[randint(0, len(dogs)-1)]}')
 
 if __name__ == '__main__':
     executor.start_polling(dp)
