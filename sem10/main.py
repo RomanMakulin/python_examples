@@ -2,6 +2,7 @@ import time
 import logging
 from aiogram import Bot, Dispatcher, executor, types
 from random import randint
+from base import *
 
 
 # 'UTF-8-sig'
@@ -25,8 +26,9 @@ async def start_handler(message: types.Message):
     time.sleep(1)
     btns = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('/Фильмы')
-    btn2 = types.KeyboardButton('/Мультики')
-    btns.add(btn1, btn2)
+    btn2 = types.KeyboardButton('/Сериалы')
+    btn3 = types.KeyboardButton('/Мультики')
+    btns.add(btn1, btn2, btn3)
     await bot.send_message(user_id, MSG.format(user_name), reply_markup=btns)
 
 @dp.message_handler(commands=['Фильмы'])
@@ -44,10 +46,6 @@ async def func(message: types.Message):
         btns.add(btn_fantasy, btn_horror, btn_camedy, btn_roman, btn_historic, btn_dogs, back)
         await bot.send_message(user_id, MSG.format(user_name), reply_markup=btns)
 
-@dp.message_handler(commands=['Мультики'])
-async def func(message: types.Message):
-        await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {mults[randint(0, len(mults)-1)]}')
-
 @dp.message_handler(commands=['Меню'])
 async def menu_handler(message: types.Message):
     await bot.send_message(message.from_user.id, 'Возвращаемся в меню искать что-то новенькое!')
@@ -55,17 +53,18 @@ async def menu_handler(message: types.Message):
     user_name = message.from_user.first_name 
     btns = types.ReplyKeyboardMarkup(resize_keyboard=True)
     btn1 = types.KeyboardButton('/Фильмы')
-    btn2 = types.KeyboardButton('/Мультики')
-    btns.add(btn1, btn2)
+    btn2 = types.KeyboardButton('/Сериалы')
+    btn3 = types.KeyboardButton('/Мультики')
+    btns.add(btn1, btn2, btn3)
     await bot.send_message(user_id, MSG.format(user_name), reply_markup=btns)
 
-fantasy = ['Гарри Поттер', 'Аватар', 'Властелин кольца', 'Звездные войны', 'Люди Икс', 'Человек Паук', 'Мстители']
-horror = ['Дом 2', 'Пиковая дама', 'Астрал']
-camedy = ['Американский пирог', 'Дружить по-русски', 'Очень страшное кино']
-roman = ['Титаник', 'Елки', 'После']
-historic = ['9 рота', 'Брестская крепость']
-mults = ['Ледниковый период', 'Душа', 'Головоломка']
-dogs = ['Собака 1', 'Собака 2', 'Собака 3']
+@dp.message_handler(commands=['Мультики'])
+async def multfilms(message: types.Message):
+        await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {mults[randint(0, len(mults)-1)]}')
+
+@dp.message_handler(commands=['Сериалы'])
+async def serials(message: types.Message):
+        await bot.send_message(message.from_user.id, f'Подобрал на свой вкус: {serial[randint(0, len(serial)-1)]}')
 
 @dp.message_handler(commands=['Фантастика'])
 async def fantasy_handler(message: types.Message):
