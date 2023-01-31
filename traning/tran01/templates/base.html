@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+
+    <table>
+        <tr><th>Имя</th><th>Фамилия</th><th>Дата рождения</th></tr>
+        {% for row in name %}
+            <tr><td>{{row[0]}}</td><td>{{row[1]}}</td><td>{{row[2]}}</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
+    
+</body>
+</html>
